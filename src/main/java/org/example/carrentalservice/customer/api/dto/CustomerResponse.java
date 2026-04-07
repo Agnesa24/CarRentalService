@@ -1,4 +1,4 @@
-package customer.api.dto;
+package org.example.carrentalservice.customer.api.dto;
 
 import lombok.Builder;
 import lombok.Data;

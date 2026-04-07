@@ -1,4 +1,4 @@
-package customer.api.dto;
+package org.example.carrentalservice.customer.api.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Future;
@@ -9,7 +9,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class CreateCustomerRequest {
+public class UpdateCustomerRequest {
     @NotBlank
     private String fullName;
     @Email

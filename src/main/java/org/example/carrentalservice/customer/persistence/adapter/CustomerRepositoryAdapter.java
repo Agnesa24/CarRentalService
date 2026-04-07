@@ -1,10 +1,10 @@
-package customer.persistence.adapter;
+package org.example.carrentalservice.customer.persistence.adapter;
 
-import customer.api.mapper.CustomerMapper;
-import customer.domain.model.Customer;
-import customer.domain.repository.CustomerRepository;
-import customer.persistence.entity.CustomerJpaEntity;
-import customer.persistence.repository.SpringDataCustomerRepository;
+import org.example.carrentalservice.customer.api.mapper.CustomerMapper;
+import org.example.carrentalservice.customer.domain.model.Customer;
+import org.example.carrentalservice.customer.domain.repository.CustomerRepository;
+import org.example.carrentalservice.customer.persistence.entity.CustomerJpaEntity;
+import org.example.carrentalservice.customer.persistence.repository.SpringDataCustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

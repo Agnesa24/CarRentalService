@@ -1,9 +1,9 @@
-package customer.api.controller;
+package org.example.carrentalservice.customer.api.controller;
 
-import customer.api.dto.CreateCustomerRequest;
-import customer.api.dto.CustomerResponse;
-import customer.api.dto.UpdateCustomerRequest;
-import customer.service.CustomerApplicationService;
+import org.example.carrentalservice.customer.api.dto.CreateCustomerRequest;
+import org.example.carrentalservice.customer.api.dto.CustomerResponse;
+import org.example.carrentalservice.customer.api.dto.UpdateCustomerRequest;
+import org.example.carrentalservice.customer.service.CustomerApplicationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

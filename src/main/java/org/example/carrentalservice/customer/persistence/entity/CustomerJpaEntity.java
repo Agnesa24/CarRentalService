@@ -1,4 +1,4 @@
-package customer.persistence.entity;
+package org.example.carrentalservice.customer.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

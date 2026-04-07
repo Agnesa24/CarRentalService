@@ -1,6 +1,6 @@
-package customer.domain.repository;
+package org.example.carrentalservice.customer.domain.repository;
 
-import customer.domain.model.Customer;
+import org.example.carrentalservice.customer.domain.model.Customer;
 
 import java.util.List;
 import java.util.Optional;

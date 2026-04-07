@@ -1,4 +1,4 @@
-package customer.domain.model;
+package org.example.carrentalservice.customer.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

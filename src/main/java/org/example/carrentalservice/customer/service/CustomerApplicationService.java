@@ -1,11 +1,11 @@
-package customer.service;
+package org.example.carrentalservice.customer.service;
 
-import customer.api.dto.CreateCustomerRequest;
-import customer.api.dto.CustomerResponse;
-import customer.api.dto.UpdateCustomerRequest;
-import customer.api.mapper.CustomerMapper;
-import customer.domain.model.Customer;
-import customer.domain.repository.CustomerRepository;
+import org.example.carrentalservice.customer.api.dto.CreateCustomerRequest;
+import org.example.carrentalservice.customer.api.dto.CustomerResponse;
+import org.example.carrentalservice.customer.api.dto.UpdateCustomerRequest;
+import org.example.carrentalservice.customer.api.mapper.CustomerMapper;
+import org.example.carrentalservice.customer.domain.model.Customer;
+import org.example.carrentalservice.customer.domain.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import Shared.exception.DuplicateResourceException;

@@ -1,9 +1,9 @@
-package customer.api.mapper;
+package org.example.carrentalservice.customer.api.mapper;
 
-import customer.api.dto.CreateCustomerRequest;
-import customer.api.dto.CustomerResponse;
-import customer.domain.model.Customer;
-import customer.persistence.entity.CustomerJpaEntity;
+import org.example.carrentalservice.customer.api.dto.CreateCustomerRequest;
+import org.example.carrentalservice.customer.api.dto.CustomerResponse;
+import org.example.carrentalservice.customer.domain.model.Customer;
+import org.example.carrentalservice.customer.persistence.entity.CustomerJpaEntity;
 
 public class CustomerMapper {
 
