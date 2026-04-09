@@ -11,6 +11,7 @@ import org.example.carrentalservice.billing.domain.model.Invoice;
 import org.example.carrentalservice.billing.domain.repository.InvoiceRepository;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -24,7 +25,8 @@ public class InvoiceApplicationService {
     }
     public Invoice createFromAmount(Double amount) {
         Invoice invoice = Invoice.builder()
-                .amount(amount)
+                .amount(BigDecimal.valueOf(amount))
+                // .amount(amount)
                 .paymentStatus("PENDING")
                 .build();
         invoice.validate();
@@ -43,7 +45,8 @@ public class InvoiceApplicationService {
     public InvoiceResponse update(Long id, UpdateInvoiceRequest request) {
         Invoice invoice = getDomainById(id);
         invoice.setRentalId(request.getRentalId());
-        invoice.setAmount(request.getAmount());
+        invoice.setAmount(BigDecimal.valueOf(request.getAmount()));
+        // invoice.setAmount(request.getAmount());
         invoice.setPaymentStatus(request.getPaymentStatus());
         invoice.setPaymentDate(request.getPaymentDate());
         invoice.validate();
