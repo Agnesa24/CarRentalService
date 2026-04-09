@@ -9,16 +9,17 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class VehicleResponse {
+
     private Long vehicleId;
     private String brand;
     private String model;
-    private Integer vehicleYear;
+    private Integer modelYear;
     private String plateNumber;
-    private String status;
+    private Boolean available;
+    private String conditionStatus;
     private BigDecimal dailyRate;
 }

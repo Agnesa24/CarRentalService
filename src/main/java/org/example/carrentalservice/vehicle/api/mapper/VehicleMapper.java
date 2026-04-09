@@ -8,16 +8,16 @@ import org.example.carrentalservice.vehicle.persistence.entity.VehicleJpaEntity;
 
 public class VehicleMapper {
 
-    private VehicleMapper() {
-    }
+    private VehicleMapper() {}
 
-    public static Vehicle fromRequest(CreateVehicleRequest request) {
+    public static Vehicle toDomain(CreateVehicleRequest request) {
         return Vehicle.builder()
                 .brand(request.getBrand())
                 .model(request.getModel())
-                .vehicleYear(request.getVehicleYear())
+                .modelYear(request.getModelYear())
                 .plateNumber(request.getPlateNumber())
-                .status(request.getStatus())
+                .available(request.getAvailable())
+                .conditionStatus(request.getConditionStatus())
                 .dailyRate(request.getDailyRate())
                 .build();
     }
@@ -27,9 +27,10 @@ public class VehicleMapper {
                 .vehicleId(entity.getVehicleId())
                 .brand(entity.getBrand())
                 .model(entity.getModel())
-                .vehicleYear(entity.getVehicleYear())
+                .modelYear(entity.getModelYear())
                 .plateNumber(entity.getPlateNumber())
-                .status(entity.getStatus())
+                .available(entity.getAvailable())
+                .conditionStatus(entity.getConditionStatus())
                 .dailyRate(entity.getDailyRate())
                 .build();
     }
@@ -39,9 +40,10 @@ public class VehicleMapper {
                 .vehicleId(vehicle.getVehicleId())
                 .brand(vehicle.getBrand())
                 .model(vehicle.getModel())
-                .vehicleYear(vehicle.getVehicleYear())
+                .modelYear(vehicle.getModelYear())
                 .plateNumber(vehicle.getPlateNumber())
-                .status(vehicle.getStatus())
+                .available(vehicle.getAvailable())
+                .conditionStatus(vehicle.getConditionStatus())
                 .dailyRate(vehicle.getDailyRate())
                 .build();
     }
@@ -51,9 +53,10 @@ public class VehicleMapper {
                 .vehicleId(vehicle.getVehicleId())
                 .brand(vehicle.getBrand())
                 .model(vehicle.getModel())
-                .vehicleYear(vehicle.getVehicleYear())
+                .modelYear(vehicle.getModelYear())
                 .plateNumber(vehicle.getPlateNumber())
-                .status(vehicle.getStatus())
+                .available(vehicle.getAvailable())
+                .conditionStatus(vehicle.getConditionStatus())
                 .dailyRate(vehicle.getDailyRate())
                 .build();
     }
