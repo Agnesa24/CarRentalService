@@ -1,4 +1,31 @@
-version: '3.8'
+##version: '3.8'
+#
+#services:
+#  postgres:
+#    image: postgres:16
+#    container_name: carrental-postgres
+#    environment:
+#      POSTGRES_DB: carrentaldb
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: postgres
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#
+#  app:
+#    build: .
+#    container_name: carrental-app
+#    depends_on:
+#      - postgres
+#    environment:
+#      SPRING_PROFILES_ACTIVE: docker
+#    ports:
+#      - "8080:8080"
+#
+#volumes:
+#  postgres_data:
+
 
 services:
   postgres:
@@ -15,13 +42,14 @@ services:
 
   app:
     build: .
+    image: carrental-app:latest
     container_name: carrental-app
     depends_on:
       - postgres
     environment:
       SPRING_PROFILES_ACTIVE: docker
     ports:
-      - "8080:8080"
+      - "8082:8080"
 
 volumes:
   postgres_data:
