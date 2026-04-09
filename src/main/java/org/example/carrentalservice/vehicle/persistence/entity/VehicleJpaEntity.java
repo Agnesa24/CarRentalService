@@ -14,12 +14,16 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.*;
+import lombok.*;
+
 @Entity
 @Table(name = "vehicles")
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class VehicleJpaEntity {
 
     @Id
@@ -28,8 +32,9 @@ public class VehicleJpaEntity {
 
     private String brand;
     private String model;
-    private Integer vehicleYear;
+    private Integer modelYear;
     private String plateNumber;
-    private String status;
+    private Boolean available;
+    private String conditionStatus;
     private BigDecimal dailyRate;
 }

@@ -50,7 +50,7 @@ public class Invoice {
 
     private Long invoiceId;
     private Long rentalId;
-    private BigDecimal amount; //
+    private BigDecimal amount;
     private String paymentStatus;
     private LocalDate paymentDate;
 

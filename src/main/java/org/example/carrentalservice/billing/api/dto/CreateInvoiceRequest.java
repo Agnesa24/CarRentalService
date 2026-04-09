@@ -14,9 +14,8 @@ public class CreateInvoiceRequest {
     private Long rentalId;
     @NotNull
     @DecimalMin("0.01")
-   // private Double amount;
+    private BigDecimal amount;
     @NotBlank
     private String paymentStatus;
     private LocalDate paymentDate;
-    private BigDecimal amount;
 }

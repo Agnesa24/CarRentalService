@@ -1,45 +1,44 @@
 package org.example.carrentalservice.vehicle.domain.model;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.example.carrentalservice.shared.exception.BusinessRuleException;
 
 import java.math.BigDecimal;
 
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Vehicle {
 
     private Long vehicleId;
     private String brand;
     private String model;
-    private Integer vehicleYear;
+    private Integer modelYear;
     private String plateNumber;
-    private String status;
+    private Boolean available;
+    private String conditionStatus;
     private BigDecimal dailyRate;
 
     public void validate() {
-        if (brand == null || brand.isBlank()) {
-            throw new IllegalArgumentException("Brand is required.");
+        if (dailyRate == null || dailyRate.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new BusinessRuleException("Daily rate must be greater than 0.");
         }
-        if (model == null || model.isBlank()) {
-            throw new IllegalArgumentException("Model is required.");
+    }
+
+    public void markUnavailable() {
+        if (!Boolean.TRUE.equals(available)) {
+            throw new BusinessRuleException("Vehicle is already unavailable.");
         }
-        if (vehicleYear == null) {
-            throw new IllegalArgumentException("Vehicle year is required.");
+        this.available = false;
+    }
+
+    // symmetric domain method
+    public void markAvailable() {
+        if (Boolean.TRUE.equals(available)) {
+            throw new BusinessRuleException("Vehicle is already available.");
         }
-        if (plateNumber == null || plateNumber.isBlank()) {
-            throw new IllegalArgumentException("Plate number is required.");
-        }
-        if (status == null || status.isBlank()) {
-            throw new IllegalArgumentException("Status is required.");
-        }
-        if (dailyRate == null || dailyRate.signum() < 0) {
-            throw new IllegalArgumentException("Daily rate must be valid.");
-        }
+        this.available = true;
     }
 }

@@ -2,6 +2,7 @@ package org.example.carrentalservice.vehicle.api.dto;
 
 
 
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -18,14 +19,18 @@ public class CreateVehicleRequest {
     private String model;
 
     @NotNull
-    private Integer vehicleYear;
+    private Integer modelYear; // ✅ was vehicleYear
 
     @NotBlank
     private String plateNumber;
 
+    @NotNull
+    private Boolean available; // ✅ was missing or String status
+
     @NotBlank
-    private String status;
+    private String conditionStatus; // ✅ was missing
 
     @NotNull
+    @DecimalMin("0.01")
     private BigDecimal dailyRate;
 }

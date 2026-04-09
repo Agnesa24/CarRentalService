@@ -18,6 +18,7 @@ spring:
     locations: classpath:db/migration
 
 springdoc:
+  enable-hateoas: false
   swagger-ui:
     path: /swagger-ui.html
 
