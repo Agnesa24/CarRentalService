@@ -1,6 +1,6 @@
 package org.example.carrentalservice.billing.application.service;
 
-import Shared.exception.ResourceNotFoundException;
+import org.example.carrentalservice.exception.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.example.carrentalservice.billing.api.dto.CreateInvoiceRequest;
 import org.example.carrentalservice.billing.api.dto.InvoiceResponse;
@@ -25,7 +25,8 @@ public class InvoiceApplicationService {
     }
     public Invoice createFromAmount(Double amount) {
         Invoice invoice = Invoice.builder()
-                .amount(amount)
+                .amount(BigDecimal.valueOf(amount))
+                // .amount(amount)
                 .paymentStatus("PENDING")
                 .build();
         invoice.validate();
@@ -44,7 +45,8 @@ public class InvoiceApplicationService {
     public InvoiceResponse update(Long id, UpdateInvoiceRequest request) {
         Invoice invoice = getDomainById(id);
         invoice.setRentalId(request.getRentalId());
-        invoice.setAmount(request.getAmount());
+        invoice.setAmount(BigDecimal.valueOf(request.getAmount()));
+        // invoice.setAmount(request.getAmount());
         invoice.setPaymentStatus(request.getPaymentStatus());
         invoice.setPaymentDate(request.getPaymentDate());
         invoice.validate();

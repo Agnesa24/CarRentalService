@@ -1,56 +1,59 @@
 package org.example.carrentalservice.vehicle.api.mapper;
 
+
 import org.example.carrentalservice.vehicle.api.dto.CreateVehicleRequest;
 import org.example.carrentalservice.vehicle.api.dto.VehicleResponse;
 import org.example.carrentalservice.vehicle.domain.model.Vehicle;
-import org.example.carrentalservice.vehicle.infrastructure.persistence.entity.VehicleJpaEntity;
+import org.example.carrentalservice.vehicle.persistence.entity.VehicleJpaEntity;
 
 public class VehicleMapper {
-    private VehicleMapper() {}
-    public static Vehicle toDomain(CreateVehicleRequest request) {
+
+    private VehicleMapper() {
+    }
+
+    public static Vehicle fromRequest(CreateVehicleRequest request) {
         return Vehicle.builder()
                 .brand(request.getBrand())
                 .model(request.getModel())
-                .modelYear(request.getModelYear())
+                .vehicleYear(request.getVehicleYear())
                 .plateNumber(request.getPlateNumber())
-                .available(request.getAvailable())
-                .conditionStatus(request.getConditionStatus())
+                .status(request.getStatus())
                 .dailyRate(request.getDailyRate())
                 .build();
     }
-    public static Vehicle toDomain(VehicleJpaEntity entity) {
+
+    public static Vehicle fromJpa(VehicleJpaEntity entity) {
         return Vehicle.builder()
                 .vehicleId(entity.getVehicleId())
                 .brand(entity.getBrand())
                 .model(entity.getModel())
-                .modelYear(entity.getModelYear())
+                .vehicleYear(entity.getVehicleYear())
                 .plateNumber(entity.getPlateNumber())
-                .available(entity.getAvailable())
-                .conditionStatus(entity.getConditionStatus())
+                .status(entity.getStatus())
                 .dailyRate(entity.getDailyRate())
                 .build();
     }
+
     public static VehicleJpaEntity toJpa(Vehicle vehicle) {
         return VehicleJpaEntity.builder()
                 .vehicleId(vehicle.getVehicleId())
                 .brand(vehicle.getBrand())
                 .model(vehicle.getModel())
-                .modelYear(vehicle.getModelYear())
+                .vehicleYear(vehicle.getVehicleYear())
                 .plateNumber(vehicle.getPlateNumber())
-                .available(vehicle.getAvailable())
-                .conditionStatus(vehicle.getConditionStatus())
+                .status(vehicle.getStatus())
                 .dailyRate(vehicle.getDailyRate())
                 .build();
     }
+
     public static VehicleResponse toResponse(Vehicle vehicle) {
         return VehicleResponse.builder()
                 .vehicleId(vehicle.getVehicleId())
                 .brand(vehicle.getBrand())
                 .model(vehicle.getModel())
-                .modelYear(vehicle.getModelYear())
+                .vehicleYear(vehicle.getVehicleYear())
                 .plateNumber(vehicle.getPlateNumber())
-                .available(vehicle.getAvailable())
-                .conditionStatus(vehicle.getConditionStatus())
+                .status(vehicle.getStatus())
                 .dailyRate(vehicle.getDailyRate())
                 .build();
     }

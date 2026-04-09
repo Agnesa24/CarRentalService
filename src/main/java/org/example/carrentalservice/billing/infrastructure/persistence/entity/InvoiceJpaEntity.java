@@ -6,6 +6,7 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+
 @Entity
 @Table(name = "invoices")
 @Getter
@@ -18,7 +19,9 @@ public class InvoiceJpaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long invoiceId;
     private Long rentalId;
-    private Double amount;
+    //private Double amount;
+    @Column(nullable = false) //i added this too
+    private BigDecimal amount;
     private String paymentStatus;
     private LocalDate paymentDate;
 }

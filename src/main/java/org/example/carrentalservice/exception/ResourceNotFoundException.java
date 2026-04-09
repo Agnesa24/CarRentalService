@@ -1,4 +1,4 @@
-package Shared.exception;
+package org.example.carrentalservice.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {

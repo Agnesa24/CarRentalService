@@ -1,31 +1,45 @@
 package org.example.carrentalservice.vehicle.domain.model;
 
-import lombok.*;
-import org.example.carrentalservice.shared.exception.BusinessRuleException;
 
-@Getter
-@Setter
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class Vehicle {
+
     private Long vehicleId;
     private String brand;
     private String model;
-    private Integer modelYear;
+    private Integer vehicleYear;
     private String plateNumber;
-    private Boolean available;
-    private String conditionStatus;
-    private Double dailyRate;
+    private String status;
+    private BigDecimal dailyRate;
+
     public void validate() {
-        if (dailyRate == null || dailyRate <= 0) {
-            throw new BusinessRuleException("Daily rate must be greater than 0.");
+        if (brand == null || brand.isBlank()) {
+            throw new IllegalArgumentException("Brand is required.");
         }
-    }
-    public void markUnavailable() {
-        if (!Boolean.TRUE.equals(available)) {
-            throw new BusinessRuleException("Vehicle is already unavailable.");
+        if (model == null || model.isBlank()) {
+            throw new IllegalArgumentException("Model is required.");
         }
-        this.available = false;
+        if (vehicleYear == null) {
+            throw new IllegalArgumentException("Vehicle year is required.");
+        }
+        if (plateNumber == null || plateNumber.isBlank()) {
+            throw new IllegalArgumentException("Plate number is required.");
+        }
+        if (status == null || status.isBlank()) {
+            throw new IllegalArgumentException("Status is required.");
+        }
+        if (dailyRate == null || dailyRate.signum() < 0) {
+            throw new IllegalArgumentException("Daily rate must be valid.");
+        }
     }
 }
