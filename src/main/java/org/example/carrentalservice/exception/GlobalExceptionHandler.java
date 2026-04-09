@@ -1,4 +1,4 @@
-package Shared.exception;
+package org.example.carrentalservice.exception;
 
 
 import org.springframework.http.HttpStatus;

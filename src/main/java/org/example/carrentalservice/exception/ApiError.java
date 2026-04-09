@@ -1,6 +1,4 @@
-package org.example.carrentalservice.shared.exception;
-
-
+package org.example.carrentalservice.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

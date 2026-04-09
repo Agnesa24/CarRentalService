@@ -1,4 +1,4 @@
-package org.example.carrentalservice.shared.config;
+package org.example.carrentalservice.exception;
 
 
 import io.swagger.v3.oas.models.ExternalDocumentation;

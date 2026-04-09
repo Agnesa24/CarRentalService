@@ -1,4 +1,4 @@
-package Shared.exception;
+package org.example.carrentalservice.exception;
 
 
 public class DuplicateResourceException extends RuntimeException {

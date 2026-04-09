@@ -8,8 +8,8 @@ import org.example.carrentalservice.customer.domain.model.Customer;
 import org.example.carrentalservice.customer.domain.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import Shared.exception.DuplicateResourceException;
-import Shared.exception.ResourceNotFoundException;
+import org.example.carrentalservice.exception.DuplicateResourceException;
+import org.example.carrentalservice.exception.ResourceNotFoundException;
 
 import java.util.List;
 

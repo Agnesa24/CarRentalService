@@ -1,4 +1,4 @@
-package org.example.carrentalservice.shared.exception;
+package org.example.carrentalservice.exception;
 
 
 public class BusinessRuleException extends RuntimeException {
