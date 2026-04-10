@@ -39,11 +39,8 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.5'
-<<<<<<< HEAD
 	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
-=======
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
->>>>>>> de0309a8e0d5ad738b245494931004c6387d5097
 
 
 }
